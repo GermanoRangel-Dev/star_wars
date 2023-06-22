@@ -7,9 +7,16 @@ window.onload = async () => {
     console.log(error);
     alert('Erro ao carregar Cards!');
   }
+
+  const nextButton = document.getElementById('next-button');
+  const backButton = document.getElementById('back-button');
+
+  nextButton.addEventListener('click', loadNextPage);
+  backButton.addEventListener('click', loadPreviousPage);
+
 };
 
-// retorno da url e criação dos cards dinâmicos
+// retorno da url e criação dos cards ainda estáticos mas pela DOM
 
 async function loadCharacters(url) {
   const mainContent = document.getElementById("main-content");
@@ -22,7 +29,8 @@ async function loadCharacters(url) {
 
     responseJson.results.forEach((character) => {
       const card = document.createElement("div");
-      card.style.backgroundImage = `url('https://starwars-visualguide.com/assets/img/characters/1.jpg')`
+      card.style.backgroundImage = 
+      `url('https://starwars-visualguide.com/assets/img/characters/${character.url.replace(/\D/g, "")}.jpg')` //cards dinâmicos
       card.className = "cards"
 
       const characterNameBG = document.createElement("div");
@@ -37,6 +45,15 @@ async function loadCharacters(url) {
 
       mainContent.appendChild(card);
      });
+
+     const nextButton = document.getElementById('next-button');
+     const backButton = document.getElementById('back-button');
+
+     nextButton.disabled = !responseJson.next;
+     backButton.disabled = !responseJson.previous;
+
+     backButton.style.visibility = responseJson.previous? "visible" : "hidden";
+     
 
      currentPageUrl = url;
 
