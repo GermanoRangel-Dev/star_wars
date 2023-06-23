@@ -16,7 +16,7 @@ window.onload = async () => {
 
 };
 
-// retorno da url e criação dos cards ainda estáticos mas pela DOM
+// retorno da url e criação dos cards dinamicamente pela DOM
 
 async function loadCharacters(url) {
   const mainContent = document.getElementById("main-content");
@@ -55,10 +55,43 @@ async function loadCharacters(url) {
      backButton.style.visibility = responseJson.previous? "visible" : "hidden";
      
 
-     currentPageUrl = url;
+     currentPageUrl = url; // aqui muda o valor da página
 
   } catch (error){
     alert('Erro ao carregar os novos personagens');
     console.log(error);
   }
 }
+
+async function loadNextPage(){
+  if(!currentPageUrl) return;
+
+  try{
+    const response = await fetch(currentPageUrl);
+    const responseJson = await response.json();
+
+    await loadCharacters(responseJson.next);
+
+  }catch(error){
+    console.log(error);
+    alert('Erro ao carregar a próxima página');
+  }
+}
+
+async function loadPreviousPage(){
+  if(!currentPageUrl) return;
+
+  try{
+    const response = await fetch(currentPageUrl);
+    const responseJson = await response.json();
+
+    await loadCharacters(responseJson.previous);
+
+  }catch(error){
+    console.log(error);
+    alert('Erro ao carregar a página anterior');
+  }
+}
+
+
+
