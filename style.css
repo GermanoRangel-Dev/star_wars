@@ -202,3 +202,30 @@ footer {
   font-weight: lighter;
   color: gold;
 }
+
+@media(max-width:768px){
+h2 {
+  text-align: center;
+}
+
+.social-media {
+  width: 120px;
+  justify-content: space-around;
+  cursor:pointer;
+  
+}
+
+.logo {
+  width: 150px;
+} 
+
+footer {
+  text-align: center;
+}
+
+.modal-content {
+  width: 80vw;
+  height: 70vh;
+}
+
+}
