@@ -43,6 +43,11 @@ async function loadCharacters(url) {
       characterNameBG.appendChild(characterName);
       card.appendChild(characterNameBG);
 
+      card.onclick = () => {
+        const modal = document.getElementById("modal");
+        modal.style.visibility ="visible";
+      }
+
       mainContent.appendChild(card);
      });
 
@@ -93,5 +98,9 @@ async function loadPreviousPage(){
   }
 }
 
+function hideModal(){
+  const modal = document.getElementById("modal");
+  modal.style.visibility = "hidden";
+}
 
 
