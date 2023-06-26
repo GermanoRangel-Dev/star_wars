@@ -105,6 +105,10 @@ i:hover {
   padding: 20px 0;
 }
 
+.audio {
+  visibility: hidden;
+}
+
 h2 {
   font-family: 'Star wars', sans-serif;
   margin-bottom: 20px;
@@ -185,7 +189,8 @@ button:hover {
   visibility: hidden;
 }
 
-body .wrapper .scroll-text{
+body .bloco{
+  padding: 10px 0;
   overflow: hidden;
   margin: 10% 0 0 0;
   position: relative;
@@ -217,13 +222,16 @@ perspective: 450px;
   font-weight: bold;
   text-align: justify;
   position: relative;
-  animation: scroll 60s linear forwards;
+  animation: scroll 90s linear forwards;
 }
 
-h1 {
+.sc-h1 {
   text-align: center;
-  
-  
+  color: gold;
+}
+
+.sc-p{
+  color: gold;
 }
 
 footer {
@@ -293,6 +301,17 @@ footer {
 h2 {
   text-align: center;
 }
+
+.nav-container{
+  
+  justify-content: space-between;
+
+}
+
+li {
+  font-size: 10px;
+}
+
 
 .social-media {
   width: 120px;
