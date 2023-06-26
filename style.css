@@ -5,12 +5,13 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-  color: #fff;
+  color:#fff;
 }
 
 body {
   background-image: url('assets/universo.jpeg');
   background-size: cover;
+  
 }
 
 header {
@@ -42,6 +43,7 @@ a {
 .logo-text {
   font-family: 'Star Wars', sans-serif;
   font-size: 1rem;
+  
 }
 
 .social-media {
@@ -49,8 +51,6 @@ a {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
-  
-  
 }
 
 .nav-container {
@@ -58,8 +58,6 @@ a {
   border: 1px solid gold;
   border-radius: 5px;
   align-items: center;
-  
-  
 }
 
 nav {
@@ -187,6 +185,47 @@ button:hover {
   visibility: hidden;
 }
 
+body .wrapper .scroll-text{
+  overflow: hidden;
+  margin: 10% 0 0 0;
+  position: relative;
+  
+}
+
+body .wrapper .scroll-text::after  {
+  content: '';
+  position: fixed;
+  top: 30vh;
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(180deg, background-image url('assets/universo.jpeg')100%);
+}
+
+
+.wrapper {
+display: flex;
+height: 100%;
+width: 60%;
+margin: 0 auto;
+perspective: 450px;
+}
+
+.scroll-text {
+  color: #ffc909;
+  font-size: 2vw;
+  line-height: 1.5em;
+  font-weight: bold;
+  text-align: justify;
+  position: relative;
+  animation: scroll 60s linear forwards;
+}
+
+h1 {
+  text-align: center;
+  
+  
+}
+
 footer {
   width: 100%;
   display: flex;
@@ -243,6 +282,11 @@ footer {
   font-size: 1rem;
   font-weight: lighter;
   color: gold;
+}
+
+@keyframes scroll {
+  from { top: 0; transform: translateZ(0) rotateX(20deg)}
+  to {top: -7500px; transform: translateZ(-2500px) rotateX(21deg) }
 }
 
 @media(max-width:768px){

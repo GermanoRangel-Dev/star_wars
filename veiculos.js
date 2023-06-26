@@ -64,19 +64,18 @@ async function loadVehicle(url) {
 
         const model = document.createElement("span");
         model.className = "character-details";
-        model.innerText = ''; // `Altura: ${convertHeight(character.height)}`;
+        model.innerText = `modelo: ${vehicle.model}`;
 
         const passengers = document.createElement("span");
         passengers.className = "character-details";
-        passengers.innerText = ''; // `Peso: ${convertMass(character.mass)}`;
+        passengers.innerText =  `passageiros: ${(number).toFixed(2)}`;
 
         const cargo_capacity = document.createElement("span");
         cargo_capacity.className = "character-details";
-        cargo_capacity.innerText = ''; // `Cor dos olhos: ${convertEyeColor(character.eye_color)}`;
-
+        cargo_capacity.innerText = `capacidade de carga: ${(number).toFixed(2)}`;
         const vehicle_class = document.createElement("span");
         vehicle_class.className = "character-details";
-        vehicle_class.innerText = ''; // `Nascimento: ${convertBirthYear(character.birth_year)}`; 
+        vehicle_class.innerText = `classe de veiculo: ${vehicle.vehicle_class}`; 
 
         modalContent.appendChild(characterImage);
         modalContent.appendChild(name);

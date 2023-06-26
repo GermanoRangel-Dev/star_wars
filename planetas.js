@@ -63,21 +63,21 @@ async function loadPlanet(url) {
 
         const rotation_period = document.createElement("span");
         rotation_period.className = "character-details";
-        rotation_period.innerText = ''; //`Altura: ${convertHeight(character.height)}`;
-
+        rotation_period.innerText = `periodo de rotacao:${planet.rotation_period}`;
+        
         const diameter = document.createElement("span");
         diameter.className = "character-details";
-        diameter.innerText =''; //`Peso: ${convertMass(character.mass)}`;
+        diameter.innerText = `diametro:${planet.diameter}`;
 
         const climate = document.createElement("span");
         climate.className = "character-details";
-        climate.innerText = ''; //`Cor dos olhos: ${convertEyeColor(character.eye_color)}`;
+        climate.innerText = `clima:${convertClimate(character.climate)}`;
 
         const population = document.createElement("span");
         population.className = "character-details";
-        population.innerText = ''; //`Nascimento: ${convertBirthYear(character.birth_year)}`;
+        population.innerText = `populacao:${convertPopulation(character.population)}`;
 
-        modalContent.appendChild(characterImage);
+        modalContent.appendChild(planetImage);
         modalContent.appendChild(name);
         modalContent.appendChild(rotation_period);
         modalContent.appendChild(diameter);
@@ -138,4 +138,26 @@ async function loadPreviousPage(){
 function hideModal(){
   const modal = document.getElementById("modal");
   modal.style.visibility = "hidden";
+}
+
+function convertClimate(climate){
+  const clima = {
+    arid: "arido",
+    temperate: "termperado",
+    tropical: "tropical",
+    frozen: "congelado",
+    murky: "escuro",
+    
+  };
+
+  return clima[climate.toLowerCase()] || climate;
+}
+
+function convertPopulation(population){
+  const populacao = {
+    Number:"",
+    unknown: "desconhecida",
+  };
+
+  return populacao[population.toLowerCase()] || population;
 }
