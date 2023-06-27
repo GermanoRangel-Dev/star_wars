@@ -235,6 +235,12 @@ perspective: 450px;
   
 }
 
+.hist h1{
+  text-align: center;
+  font-family: 'Star Wars', sans-serif;
+  color: gold;
+}
+
 footer {
   width: 100%;
   display: flex;
