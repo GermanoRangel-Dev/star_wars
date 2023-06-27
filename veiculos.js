@@ -60,7 +60,7 @@ async function loadVehicle(url) {
 
         const name = document.createElement("span");
         name.className = "character-details";
-        name.innerText = `Nome:${vehicle.name}`;
+        name.innerText = `Nome: ${vehicle.name}`;
 
         const model = document.createElement("span");
         model.className = "character-details";
@@ -68,16 +68,18 @@ async function loadVehicle(url) {
 
         const passengers = document.createElement("span");
         passengers.className = "character-details";
-        passengers.innerText =  `passageiros: ${(number).toFixed(2)}`;
+        passengers.innerText = `passageiros: ${vehicle.passengers}`;
 
         const cargo_capacity = document.createElement("span");
         cargo_capacity.className = "character-details";
-        cargo_capacity.innerText = `capacidade de carga: ${(number).toFixed(2)}`;
+        cargo_capacity.innerText = `Capacidade máxima: ${vehicle.cargo_capacity}`;
+
         const vehicle_class = document.createElement("span");
         vehicle_class.className = "character-details";
-        vehicle_class.innerText = `classe de veiculo: ${vehicle.vehicle_class}`; 
+        vehicle_class.innerText = `populacao: ${vehicle.vehicle_class}`;
 
-        modalContent.appendChild(characterImage);
+
+        modalContent.appendChild(vehicleImage);
         modalContent.appendChild(name);
         modalContent.appendChild(model);
         modalContent.appendChild(passengers);
@@ -141,4 +143,15 @@ function hideModal(){
   modal.style.visibility = "hidden";
 }
 
+function convertPassagers(passengers){
+  if(passengers === ""){
+    return Number;
+  }
+}
+
+function convertCapacity(capacity){
+  if(capacity === ""){
+    return ("").toString;
+  }
+}
 

@@ -96,7 +96,7 @@ async function loadCharacters(url) {
      backButton.style.visibility = responseJson.previous? "visible" : "hidden";
      
 
-     currentPageUrl = url; // aqui muda o valor da página
+     currentCharacterUrl = url; // aqui muda o valor da página
 
   } catch (error){
     alert('Erro ao carregar os novos personagens');
@@ -105,10 +105,10 @@ async function loadCharacters(url) {
 }
 
 async function loadNextPage(){
-  if(!currentPageUrl) return;
+  if(!currentCharacterUrl) return;
 
   try{
-    const response = await fetch(currentPageUrl);
+    const response = await fetch(currentCharacterUrl);
     const responseJson = await response.json();
 
     await loadCharacters(responseJson.next);
@@ -122,10 +122,10 @@ async function loadNextPage(){
 
 
 async function loadPreviousPage(){
-  if(!currentPageUrl) return;
+  if(!currentCharacterUrl) return;
 
   try{
-    const response = await fetch(currentPageUrl);
+    const response = await fetch(currentCharacterUrl);
     const responseJson = await response.json();
 
     await loadCharacters(responseJson.previous);

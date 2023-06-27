@@ -1,5 +1,5 @@
 // acima daqui entra os asyncs dos currents
-async function loadNextPage(){
+/* async function loadNextPage(){
   if(!currentPageUrl) return;
 
   try{
@@ -32,6 +32,6 @@ async function loadPreviousPage(){
 function hideModal(){
   const modal = document.getElementById("modal");
   modal.style.visibility = "hidden";
-}
+} */
 
 

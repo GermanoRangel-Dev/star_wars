@@ -59,23 +59,23 @@ async function loadPlanet(url) {
 
         const name = document.createElement("span");
         name.className = "character-details";
-        name.innerText = `Nome:${planet.name}`;
+        name.innerText = `Nome: ${planet.name}`;
 
         const rotation_period = document.createElement("span");
         rotation_period.className = "character-details";
-        rotation_period.innerText = `periodo de rotacao:${planet.rotation_period}`;
-        
+        rotation_period.innerText = `rotacao: ${convertRotation(planet.rotation_period)}`;
+
         const diameter = document.createElement("span");
         diameter.className = "character-details";
-        diameter.innerText = `diametro:${planet.diameter}`;
+        diameter.innerText = `diamentro: ${planet.diameter}`;
 
         const climate = document.createElement("span");
         climate.className = "character-details";
-        climate.innerText = `clima:${convertClimate(character.climate)}`;
+        climate.innerText = `Clima: ${convertClimate(planet.climate)}`;
 
         const population = document.createElement("span");
         population.className = "character-details";
-        population.innerText = `populacao:${convertPopulation(character.population)}`;
+        population.innerText = `populacao: ${convertPopulation(planet.population)}`;
 
         modalContent.appendChild(planetImage);
         modalContent.appendChild(name);
@@ -160,4 +160,11 @@ function convertPopulation(population){
   };
 
   return populacao[population.toLowerCase()] || population;
+}
+
+function convertRotation(rotationPeriod){
+  if(rotationPeriod === ""){
+    return Number;
+  }
+  
 }
