@@ -105,7 +105,7 @@ i:hover {
   padding: 20px 0;
 }
 
-.audio {
+#audio {
   visibility: hidden;
 }
 
@@ -216,13 +216,13 @@ perspective: 450px;
 }
 
 .scroll-text {
-  color: #ffc909;
+  color: gold;
   font-size: 2vw;
-  line-height: 1.5em;
+  line-height: 2em;
   font-weight: bold;
   text-align: justify;
   position: relative;
-  animation: scroll 90s linear forwards;
+  animation: scroll 150s linear forwards;
 }
 
 .sc-h1 {
